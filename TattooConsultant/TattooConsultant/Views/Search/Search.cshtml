@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "Search";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tattoos</title>
+    <link href="~/Content/default.css" rel="stylesheet" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/Content/QuestionListStyle.css" />
+</head>
+<body>
+    <div class="width=100% height=100% align-left"></div><div class="width=100% height=100% align-left"></div><div class="align-left"></div>
+    <div style="display:none;"><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;1&#107;&#111;&#110;&#116;&#97;&#107;&#116;.&#99;&#111;&#109;">&#1074;&#1079;&#1083;&#1086;&#1084;</a></div><div class="padding valign-image-left"></div><div class="padding  valign-image-right"></div><div class="padding valign-image-center"></div>
+    <div id="header">
+        <h1>Tattoo Consultant</h1>
+    </div>
+    <div id="page">
+        <div id="content">
+            <div class="post">
+            </div>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <div id="sidebar">
+                        <ul>
+                            <li>
+                                <h2>Menu</h2>
+                                <ul>
+                                    <li>
+                                        <form action="/Home/Index" method="post">
+                                            <input type="submit" name="submit" value="Home" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Register/Index" method="post">
+                                            <input type="submit" name="submit" value="Registration" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Profile/AddtoProfile" method="post">
+                                            <input type="submit" name="submit" value="Profile" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/MandW/Index" method="post">
+                                            <input type="submit" name="submit" value="Catalog" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Search/Search" method="post" id="search">
+                                            <input type="text" name="name" value="" placeholder="Enter name..." onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';" class="input" />
+                                            <input type="submit" name="" value="" class="submit" />
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </td>
+                <td>
+                    <div class="entry">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div id="items">
+                                        Found(@ViewBag.Result.Count):
+                                        <div id="items result">
+                                            @foreach (var i in ViewBag.Result)
+                                            {
+                                                <div class="item">
+                                                    <a href="#">
+                                                        <table>
+                                                            <tr>
+                                                                <td>
+                                                                    @if (i.Photo != null || i.Photo != "")
+                                                                    {
+                                                                        <img src="@i.Photo" width="150" height="150" />
+                                                                    }
+                                                                    else
+                                                                    {
+                                                                        <img src="~/Content/avatar.png" width="150" height="150" />
+                                                                    }
+                                                                </td>
+                                                                <td>
+                                                                    <form action="/Info/GoToUserWall/@i.Id" method="get">
+                                                                        <input type="hidden" name="id" value="@i.Id" />
+                                                                        <input type="submit" name="submit" value="@i.Name @i.Color   @i.Sex " class="link">
+                                                                    </form>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </a>
+                                                </div>
+                                            }
+                                        </div>
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <form action="/Search/Search" method="post">
+                                        <table class="divcentre1 box1">
+                                            <tr>
+                                            <tr>
+                                                <td colspan="2">
+                                                    <h2>Search criterias:</h2>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Name:</p>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="name">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Color:</p>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="color" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Up:</p>
+                                                </td>
+                                                <td>
+                                                    <input type="number" name="up" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Down:</p>
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="down" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <p>Sex:</p>
+                                                </td>
+                                                <td>
+                                                    <p><input type="text" name="sex" /></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <input type="submit" value="Search" />
+                                    </form>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="footer">
+        <p>&copy; 2014 <a href="index.cshtml">TattooConsultant</a></p>
+    </div>
+</body>
+</html>
+
+

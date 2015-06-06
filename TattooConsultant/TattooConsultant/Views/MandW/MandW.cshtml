@@ -1,0 +1,96 @@
+﻿@{
+    ViewBag.Title = "MandW";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tattoos</title>
+    <link href="~/Content/default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+    <div class="width=100% height=100% align-left"></div><div class="width=100% height=100% align-left"></div><div class="align-left"></div>
+    <div style="display:none;"><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;1&#107;&#111;&#110;&#116;&#97;&#107;&#116;.&#99;&#111;&#109;">&#1074;&#1079;&#1083;&#1086;&#1084;</a></div><div class="padding valign-image-left"></div><div class="padding  valign-image-right"></div><div class="padding valign-image-center"></div>
+    <div id="header">
+        <h1>Accessories Manager</h1>
+    </div>
+    <div id="page">
+        <div id="content">
+            <div class="post">
+                <h1 class="title">Welcome to Accessories Manager</h1>
+                <div class="entry">
+                    <table>
+                        <tr>
+                            <td>
+                                <p><img src="~/Content/icons/woman.jpg"></p>
+                            </td>
+                            <td>
+                                <p><img src="~/Content/icons/men.jpg"></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <form action="/FullAccWoman/Index" method="post">
+                                    <input type="submit" name="submit" value="Woman" class="b2">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="/FullAccMan/Index" method="post">
+                                    <input type="submit" name="submit" value="Man" class="b2">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li>
+                            <form action="/Home/Index" method="post">
+                                <input type="submit" name="submit" value="Home" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/Register/Index" method="post">
+                                <input type="submit" name="submit" value="Registration" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/Profile/AddtoProfile" method="post">
+                                <input type="submit" name="submit" value="Profile" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/MandW/Index" method="post">
+                                <input type="submit" name="submit" value="Catalog" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/Search/Search" method="post" id="search">
+                                <input type="text" name="name" value="" placeholder="Enter name..." onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';" class="input" />
+                                <input type="submit" name="" value="" class="submit" />
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <p>&copy; 2014 <a href="index.cshtml">TattooConsultant</a></p>
+    </div>
+</body>
+</html>
+
+

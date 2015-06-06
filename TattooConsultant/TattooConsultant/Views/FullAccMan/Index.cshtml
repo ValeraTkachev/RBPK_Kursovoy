@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Man Accessories";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Album</title>
+    <link href="~/Content/default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+    <div class="width=100% height=100% align-left"></div><div class="width=100% height=100% align-left"></div><div class="align-left"></div>
+    <div style="display:none;"><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;1&#107;&#111;&#110;&#116;&#97;&#107;&#116;.&#99;&#111;&#109;">&#1074;&#1079;&#1083;&#1086;&#1084;</a></div><div class="padding valign-image-left"></div><div class="padding  valign-image-right"></div><div class="padding valign-image-center"></div>
+    <div id="header">
+        <h1>Tattoo Consultant</h1>
+    </div>
+    <div id="page">
+        <div id="content">
+            <div class="post">
+                <h2>Content</h2>
+                <div class="entry">
+                    <table class="cen">
+                        <tr>
+                            <td><p>Name</p></td>
+                            <td><p>Color</p></td>
+                            <td><p>Up</p></td>
+                            <td><p>Down</p></td>
+                            <td><p>Photo</p></td>
+                            <td><p>Choose</p></td>
+                            <td></td>
+                        </tr>
+                        @foreach (var s in ViewBag.Items)
+                        { 
+                            if(@s.Sex=="М")
+                            {
+                        {
+                            <tr>
+                                <td><p>@s.Name</p></td>
+                                <td><p>@s.Color</p></td>
+                                <td><p>@s.Up</p></td>
+                                <td><p>@s.Down</p></td>
+                                <td><p><img src=@s.Photo></p></td>
+                                <td>
+                                    <form action="/Info/GoToUserWall/@s.Id" method="get">
+                                        <input type="hidden" name="id" value="@s.Id" />
+                                        <input type="submit" name="submit" value="Read " class="link">
+                                    </form>
+                                </td>
+
+                            </tr>
+                        }
+                        }
+                        }
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li>
+                            <form action="/Home/Index" method="post">
+                                <input type="submit" name="submit" value="Home" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/Register/Index" method="post">
+                                <input type="submit" name="submit" value="Registration" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/Profile/AddtoProfile" method="post">
+                                <input type="submit" name="submit" value="Profile" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/MandW/Index" method="post">
+                                <input type="submit" name="submit" value="Catalog" class="b1">
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/Search/Search" method="post" id="search">
+                                <input type="text" name="name" value="" placeholder="Enter name..." onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';" class="input" />
+                                <input type="submit" name="" value="" class="submit" />
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <p>&copy; 2015 <a href="index.cshtml">Accessories Manager</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,222 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+    <link href="~/Content/default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+    <div class="width=100% height=100% align-left"></div><div class="width=100% height=100% align-left"></div><div class="align-left"></div>
+    <div style="display:none;"><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;1&#107;&#111;&#110;&#116;&#97;&#107;&#116;.&#99;&#111;&#109;">&#1074;&#1079;&#1083;&#1086;&#1084;</a></div><div class="padding valign-image-left"></div><div class="padding  valign-image-right"></div><div class="padding valign-image-center"></div>
+    <div id="header">
+        <h1>Tattoo Consultant</h1>
+    </div>
+    <div id="page">
+        <div id="content">
+            <div class="post">
+            </div>
+        </div>
+        <table>
+            <tr>
+                <td>
+                    <div id="sidebar">
+                        <ul>
+                            <li>
+                                <h2>Menu</h2>
+                                <ul>
+                                    <li>
+                                        <form action="/Home/Index" method="post">
+                                            <input type="submit" name="submit" value="Home" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Register/Index" method="post">
+                                            <input type="submit" name="submit" value="Registration" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Profile/AddtoProfile" method="post">
+                                            <input type="submit" name="submit" value="Profile" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/TattooMaker/Index" method="post">
+                                            <input type="submit" name="submit" value="Tattoo Maker" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Albumpart/Index" method="post">
+                                            <input type="submit" name="submit" value="Album" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/QuestionList/QuestionList" method="post">
+                                            <input type="submit" name="submit" value="Question List" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Chat/Index" method="post">
+                                            <input type="submit" name="submit" value="Chat" class="b1">
+                                        </form>
+                                    </li>
+                                    <li>
+                                        <form action="/Search/Search" method="post" id="search">
+                                            <input type="text" name="name" value="" placeholder="Enter name..." onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';" class="input" />
+                                            <input type="submit" name="" value="" class="submit" />
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>   
+                    </td>
+                <td></td>
+                <td>
+                <div class="entry">
+                    <form class="divcentre" action="/Profile/AddtoProfile" method="post">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <img src="@ViewBag.User.Avatar" width="200" height="200" />
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    @using (Html.BeginForm("LoadAvatar", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                                    {
+                                                        <div id="wrapper1">
+                                                            <input type="file" name="file" id="File1" />
+                                                        </div>
+                                                        <br />
+                                                        <br />
+                                                        <input type="submit" value="Upload" class="UploadButton" />
+
+                                                    }
+                                                </td>
+                                                <td></td>
+                                            </tr>
+
+                                        </table>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div>
+                                            <table>
+                                                <tr>
+                                                    <td>
+                                                        <h2>Personal information:</h2>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Name:</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="name" placeholder="@ViewBag.User.Name" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Surname:</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="surname" placeholder="@ViewBag.User.Surname" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Age:</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="age" placeholder="@ViewBag.User.Age" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Sex:</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" name="age" placeholder="@ViewBag.User.Sex" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Country:</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="country" placeholder="@ViewBag.User.Country" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>City:</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="text" name="city" placeholder="@ViewBag.User.City" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Phone:</p>
+                                                    </td>
+                                                    <td>
+                                                        <p><input type="text" name="Phone" value="@ViewBag.User.Phone" class="g-button" /></p>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Old Password</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="password" name="oldpassword" placeholder="Old Password" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>New Password</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="password" name="newpassword" placeholder="New Password" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Confirm Password</p>
+                                                    </td>
+                                                    <td>
+                                                        <input type="password" name="confirmpassword" placeholder="Confim Password" class="g-button" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <p>Role:</p>
+                                                    </td>
+                                                    <td>
+                                                        <p><input type="text" name="Role" value="@ViewBag.User.Role" class="g-button" /></p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="buttonsavepersonalinfo">
+                                                <input class="regbutton" type="submit" name="Save" value="Save info" />
+                                            </div>
+                                      
+                                    </div>
+                        </table>
+                        </form>
+</div>  
+                    </td>
+                </tr>    
+            </table>
+    </div>
+    <div id="footer">
+        <p>&copy; 2014 <a href="index.cshtml">TattooConsultant</a></p>
+    </div>
+</body>
+</html>
+

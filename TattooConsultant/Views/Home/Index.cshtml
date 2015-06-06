@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tattoos</title>
+    <link href="~/Content/default.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+    <div class="width=100% height=100% align-left"></div><div class="width=100% height=100% align-left"></div><div class="align-left"></div>
+    <div style="display:none;"><a href="&#104;&#116;&#116;&#112;&#58;&#47;&#47;1&#107;&#111;&#110;&#116;&#97;&#107;&#116;.&#99;&#111;&#109;">&#1074;&#1079;&#1083;&#1086;&#1084;</a></div><div class="padding valign-image-left"></div><div class="padding  valign-image-right"></div><div class="padding valign-image-center"></div>
+    <div id="header">
+        <form action="/Profile/Enter" method="post">
+            <table>
+                <tr>
+                    <td>
+                        <h1>Tattoo Consultant</h1>
+                    </td>
+                    <td>
+                        <h3>Enter phone number</h3>
+                    </td>
+                    <td>
+                        <h3>Enter password</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="text" name="Phone">
+                    </td>
+                    <td>
+                        <input type="text" name="Password">
+                    </td>
+                    <td>
+                        <input type="submit" name="enter" value="Enter" class="b1">
+                    </td>
+                </tr>
+            </table>
+            </form>
+</div>
+    <div id="page">
+        <div id="content">
+            <div class="post">
+                <h1 class="title">Welcome to Tattoo Consultant</h1>
+                <p> In this application you can get</p>
+                <p>consultation for making tatto from quality and professional masters.</p>
+                <p>And find popular tattoo-sketches from world </p> 
+                <div class="entry">
+                   
+                </div>
+
+            </div>
+
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li>
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><form action="/Home/Index" method="post">
+                         <input type="submit" name="submit" value="Home" class="b1"></form>
+                        </li>
+                        <li><form action="/Register/Index" method="post">
+                                <input type="submit" name="submit" value="Registration" class="b1"></form>
+                            </li>
+                        <li><form action="/Profile/Enter" method="post">
+    <input type="submit" name="submit" value="Profile" class="b1">
+</form></li>
+                        <li><form action="/TattooMaker/Index" method="post">
+                                <input type="submit" name="submit" value="Tattoo Maker" class="b1"></form></li>
+                        <li><form action="/Albumpart/Index" method="post">
+                         <input type="submit" name="submit" value="Album" class="b1">
+                        </form></li>
+                        <li>
+                            <form action="/QuestionList/QuestionList" method="post">
+                                <input type="submit" name="submit" value="Question List" class="b1">
+                            </form>
+                        </li>
+                        <li><form action="/Chat/Index" method="post">
+                         <input type="submit" name="submit" value="Chat" class="b1">
+                        </form></li>
+                        <li>
+                            <form action="/Search/Search" method="post" id="search">
+                                <input type="text" name="name" value="" placeholder="Enter name..." onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';" class="input" />
+                                <input type="submit" name="" value="" class="submit" />
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div id="footer">
+        <p>&copy; 2014 <a href="index.cshtml">TattooConsultant</a></p>
+    </div>
+</body>
+</html>
